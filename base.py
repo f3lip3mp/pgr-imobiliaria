@@ -98,3 +98,13 @@ def write(imobs):
         # formata com novas linhas e grava
         imobiliarias.write('\n'.join(armazenamento))
         imobiliarias.close()
+
+def valida_input(acao):
+    try:
+        cast_acao = int(acao)
+        if cast_acao > 4 or cast_acao < 0:
+            separador()
+            print('Valor não permitido')
+    except ValueError:
+        separador()
+        print('Valor não permitido')
