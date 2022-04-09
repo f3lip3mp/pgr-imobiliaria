@@ -87,3 +87,14 @@ def add_imovel():
         except ValueError:
             print("Valor inválido... somendo CASA e APARTMENTO são válidos")
             pass
+
+def write(imobs):
+    armazenamento = []
+    for info_obj in imobs:
+        # formata com o separador ;
+        formata_imobiliaria = ';'.join(str(x) for x in info_obj.__list__()).replace(', ', ',')
+        armazenamento.append(formata_imobiliaria)
+    with open(arquivo_imobiliaria, 'w') as imobiliarias:
+        # formata com novas linhas e grava
+        imobiliarias.write('\n'.join(armazenamento))
+        imobiliarias.close()
