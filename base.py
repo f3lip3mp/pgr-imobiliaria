@@ -50,3 +50,7 @@ class Imobiliaria():
     def __list__(self):
         # retorna uma lista com os atributos da imobiliaria, tendo ou não um imovel
         return [self.nome_imobiliaria, self.telefones] + self.__lst_imoveis_alugar.__list__()
+
+
+def separador():
+    print("=*"*30)
