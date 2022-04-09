@@ -34,3 +34,19 @@ class Imovel():
 
     def __list__(self):
         return [self.tipo, self.endereco, 'ALUGADO' if self.alugado else 'DISPONIVEL']
+
+
+class Imobiliaria():
+    def __init__(self, imob):
+        super(Imobiliaria, self).__init__()
+        self.nome_imobiliaria = imob[0]
+        self.telefones = str(imob[1])
+        self.__lst_imoveis_alugar = Imovel(imob[2:])
+
+    def atualiza_imovel(self):
+        # chamando o metodo atualiza_status que atualiza o status de aluguel
+        self.__lst_imoveis_alugar.atualiza_status()
+
+    def __list__(self):
+        # retorna uma lista com os atributos da imobiliaria, tendo ou não um imovel
+        return [self.nome_imobiliaria, self.telefones] + self.__lst_imoveis_alugar.__list__()
