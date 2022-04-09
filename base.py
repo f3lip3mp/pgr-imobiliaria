@@ -108,3 +108,50 @@ def valida_input(acao):
     except ValueError:
         separador()
         print('Valor não permitido')
+
+def main():
+    while True:
+        separador()
+        print('0 - Finalizar\n'
+        '1 - Adicionar Imobiliaria\n'
+        '2 - Adicionar Imóvel\n'
+        '3 - Relatório de Imobiliárias e seus imóveis\n'
+        '4 - Alterar status Alugado/Disponível')
+        separador()
+
+        input_menu = input('Escolha: ')
+        valida_input(input_menu)
+        if input_menu == '0':
+            print('Salvando mudanças e finalizando programa...')
+            # Grava as mudanças feitas pelo usuario.
+            write(lst_imobiliarias)
+            sys.exit(0)
+        if input_menu == '1':
+            # Instancia a funcão que adiciona uma nova imobiliaria.
+            imob = add_imob()
+            lst_imobiliarias.append(Imobiliaria(imob))
+        if input_menu == '2':
+            imov = add_imovel()
+            lst_imobiliarias.append(Imobiliaria(imov))
+        if input_menu == '3':
+            separador()
+            for imob in lst_imobiliarias:
+                print([str(x) for x in imob.__list__()])
+        if input_menu == '4':
+            # Enumera e printa as as imobiliarias para que o usuario escolha.
+            for index, imov in enumerate(lst_imobiliarias):
+                print(index, '-', str(imov.__list__()))
+            print('\n'
+            '\n')
+            escolha_imov = int(input('Escolha o imovel: '))
+            lst_imobiliarias[escolha_imov].atualiza_imovel()
+
+
+if __name__ == '__main__':
+    lst_imobiliarias = [Imobiliaria(x) for x in ler_arquivo_imobiliaria()]
+
+    try:
+        # Inicia a classe main
+        main()
+    except KeyboardInterrupt:
+        pass
