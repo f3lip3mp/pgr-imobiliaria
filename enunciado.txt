@@ -1,0 +1,15 @@
+# Tarefa 3 =-=-=-=-=-=-=-
+# Competências avaliadas:
+
+1. Ler e interpretar o arquivo: "imobiliarias.txt"
+2. Criar classe Imobiliaria com os atributos:
+	- nome_imobiliaria (string)
+	- telefones (lista) >>> (Opcional para desenvolvimento)
+	- lst_imoveis_alugar = (lista) (objetos da classe Imovel) (este atributo deve ser privado)
+
+3. Crie a classe Imovel com os atributos:
+	- tipo (string) ("CASA" ou "APARTAMENTO")
+	- endereco (string)
+	- alugado (bool) True:Alugado False:Disponível
+4. Seu código deverá armazenar as informações da imobiliária (instâncias) na lista: lst_imobiliarias
+5. Salvar os dados de lst_imobiliarias no arquivo lido
