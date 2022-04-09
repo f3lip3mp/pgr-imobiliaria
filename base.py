@@ -54,3 +54,11 @@ class Imobiliaria():
 
 def separador():
     print("=*"*30)
+
+
+def add_imob():
+    separador()
+    imob = input('Nome da Imobiliária: ')
+    for x in range(0, 1):
+        fone = input(f'Telefone: ')
+    return [imob, fone, 'null', 'null', 'null']
