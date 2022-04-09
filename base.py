@@ -24,3 +24,13 @@ class Imovel():
         self.endereco = imov[1]
         # Modifica o status de aluguel para buleano
         self.alugado = True if imov[2] == 'ALUGADO' else False
+
+    def atualiza_status(self):
+        #atualiza o status de aluguel
+        if self.alugado is True:
+            self.alugado = False
+        elif self.alugado is False:
+            self.alugado = True
+
+    def __list__(self):
+        return [self.tipo, self.endereco, 'ALUGADO' if self.alugado else 'DISPONIVEL']
