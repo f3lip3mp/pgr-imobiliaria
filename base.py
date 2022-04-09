@@ -62,3 +62,28 @@ def add_imob():
     for x in range(0, 1):
         fone = input(f'Telefone: ')
     return [imob, fone, 'null', 'null', 'null']
+
+
+def add_imovel():
+    imobiliaria = add_imob()
+    separador()
+    tipo = input('Tipo do imóvel: ')
+    while True:
+        try:
+            if tipo == "apartamento" or tipo == "casa":
+                
+                endereco = input('Endereço: ')
+                alugado = input('Status: ')
+                while True:
+                    try:
+                        if alugado == "alugado" or alugado == "disponivel":
+                            imobiliaria[2] = tipo
+                            imobiliaria[3] = endereco
+                            imobiliaria[4] = alugado
+                            return imobiliaria
+                    except ValueError:
+                        print("Valor inválido...")
+                        pass
+        except ValueError:
+            print("Valor inválido... somendo CASA e APARTMENTO são válidos")
+            pass
